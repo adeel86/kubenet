@@ -1,4 +1,4 @@
-{{Subject .Subject "Welcome to Grafana"}}
+{{Subject .Subject "Welcome to KubeNet"}}
 
 Hi {{.Name}},
 
@@ -11,4 +11,4 @@ Thank you for joining our community.
 
 The Grafana team
 
-Sent by Grafana v{{.BuildVersion}} (c) 2022 Grafana Labs
+Sent by KubeNet v{{.BuildVersion}} (c) 2022 KubeNet Labs

@@ -156,7 +156,7 @@ export const SharePublicDashboard = (props: Props) => {
             margin: 0;
           `}
         >
-          Welcome to Grafana public dashboards alpha!
+          Welcome to KubeNet public dashboards alpha!
         </p>
         {(isGetLoading || isFetching) && <Spinner />}
       </HorizontalGroup>

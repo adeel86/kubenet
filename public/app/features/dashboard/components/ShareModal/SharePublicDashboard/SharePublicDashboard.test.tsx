@@ -108,7 +108,7 @@ describe('SharePublic', () => {
 
     fireEvent.click(screen.getByText('Public dashboard'));
 
-    await screen.findByText('Welcome to Grafana public dashboards alpha!');
+    await screen.findByText('Welcome to KubeNet public dashboards alpha!');
     expect(screen.getByText('Create public dashboard')).toBeInTheDocument();
     expect(screen.queryByTestId(selectors.DeleteButton)).not.toBeInTheDocument();
   });
@@ -121,7 +121,7 @@ describe('SharePublic', () => {
 
     fireEvent.click(screen.getByText('Public dashboard'));
 
-    await screen.findByText('Welcome to Grafana public dashboards alpha!');
+    await screen.findByText('Welcome to KubeNet public dashboards alpha!');
 
     expect(screen.getByText('Create public dashboard')).toBeInTheDocument();
     expect(screen.queryByTestId(selectors.DeleteButton)).not.toBeInTheDocument();
@@ -134,7 +134,7 @@ describe('SharePublic', () => {
 
     await renderSharePublicDashboard({ panel: mockPanel, dashboard: mockDashboard, onDismiss: () => {} });
 
-    await screen.findByText('Welcome to Grafana public dashboards alpha!');
+    await screen.findByText('Welcome to KubeNet public dashboards alpha!');
     expect(screen.getByText('Last 6 hours')).toBeInTheDocument();
   });
   it('renders default absolute time in input 2', async () => {
@@ -144,7 +144,7 @@ describe('SharePublic', () => {
 
     await renderSharePublicDashboard({ panel: mockPanel, dashboard: mockDashboard, onDismiss: () => {} });
 
-    await screen.findByText('Welcome to Grafana public dashboards alpha!');
+    await screen.findByText('Welcome to KubeNet public dashboards alpha!');
     expect(screen.getByText('2022-08-30 00:00:00 to 2022-09-04 01:59:59')).toBeInTheDocument();
   });
   it('when modal is opened, then loader spinner appears and inputs are disabled', async () => {

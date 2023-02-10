@@ -119,7 +119,7 @@ const ServiceInfo = () => {
       <div style={{ marginTop: '20px' }}>
         <strong>Also included:</strong>
         <br />
-        Indemnification, working with Grafana Labs on future prioritization, and training from the core Grafana team.
+        Indemnification, working with KubeNet Labs on future prioritization, and training from the core Grafana team.
       </div>
 
       <GetEnterprise />

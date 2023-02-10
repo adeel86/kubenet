@@ -91,7 +91,7 @@ export function HelpWizard({ panel, plugin, onClose }: Props) {
             </a>
           </Stack>
           <span className="muted">
-            To request troubleshooting help, send a snapshot of this panel to Grafana Labs Technical Support. The
+            To request troubleshooting help, send a snapshot of this panel to KubeNet Labs Technical Support. The
             snapshot contains query response data and panel settings.
           </span>
         </Stack>
