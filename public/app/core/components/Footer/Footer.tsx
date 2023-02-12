@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { LinkTarget } from '@grafana/data';
-import { config } from '@grafana/runtime';
+// import { config } from '@grafana/runtime';
 import { Icon, IconName } from '@grafana/ui';
 import { t } from 'app/core/internationalization';
 
@@ -20,21 +20,21 @@ export let getFooterLinks = (): FooterLink[] => {
       id: 'documentation',
       text: t('nav.help/documentation', 'Documentation'),
       icon: 'document-info',
-      url: 'https://grafana.com/docs/grafana/latest/?utm_source=grafana_footer',
+      url: 'https://kubenet.net/resources',
     },
     {
       target: '_blank',
       id: 'support',
       text: t('nav.help/support', 'Support'),
       icon: 'question-circle',
-      url: 'https://grafana.com/products/enterprise/?utm_source=grafana_footer',
+      url: 'https://kubenet.net/contact/',
     },
     {
       target: '_blank',
       id: 'community',
-      text: t('nav.help/community', 'Community'),
+      text: t('nav.help/community', 'Become a Partner'),
       icon: 'comments-alt',
-      url: 'https://community.grafana.com/?utm_source=grafana_footer',
+      url: 'https://kubenet.net/channel-partners/',
     },
   ];
 };
@@ -49,39 +49,45 @@ export function getVersionMeta(version: string) {
 }
 
 export let getVersionLinks = (): FooterLink[] => {
-  const { buildInfo, licenseInfo } = config;
+  // const { buildInfo, licenseInfo } = config;
   const links: FooterLink[] = [];
-  const stateInfo = licenseInfo.stateInfo ? ` (${licenseInfo.stateInfo})` : '';
+  // const stateInfo = licenseInfo.stateInfo ? ` (${licenseInfo.stateInfo})` : '';
 
-  links.push({
-    target: '_blank',
-    id: 'version',
-    text: `${buildInfo.edition}${stateInfo}`,
-    url: licenseInfo.licenseUrl,
-  });
+  // links.push(
+  //   {
+  //   target: '_blank',
+  //   id: 'version',
+  //   text: `${buildInfo.edition}${stateInfo}`,
+  //   url: licenseInfo.licenseUrl,
+  // }
+  // );
 
-  if (buildInfo.hideVersion) {
-    return links;
-  }
+  // if (buildInfo.hideVersion) {
+  // return links;
+  // }
 
-  const { hasReleaseNotes } = getVersionMeta(buildInfo.version);
+  // const { hasReleaseNotes } = getVersionMeta(buildInfo.version);
 
-  links.push({
-    target: '_blank',
-    id: 'version',
-    text: `v${buildInfo.version} (${buildInfo.commit})`,
-    url: hasReleaseNotes ? `https://github.com/grafana/grafana/blob/main/CHANGELOG.md` : undefined,
-  });
+  // links.push(
+  //   {
+  //   target: '_blank',
+  //   id: 'version',
+  //   text: `v${buildInfo.version} (${buildInfo.commit})`,
+  //   url: hasReleaseNotes ? `https://github.com/grafana/grafana/blob/main/CHANGELOG.md` : undefined,
+  // }
+  // );
 
-  if (buildInfo.hasUpdate) {
-    links.push({
-      target: '_blank',
-      id: 'updateVersion',
-      text: `New version available!`,
-      icon: 'download-alt',
-      url: 'https://grafana.com/grafana/download?utm_source=grafana_footer',
-    });
-  }
+  // if (buildInfo.hasUpdate) {
+  // links.push(
+  //   {
+  //   target: '_blank',
+  //   id: 'updateVersion',
+  //   text: `New version available!`,
+  //   icon: 'download-alt',
+  //   url: 'https://grafana.com/grafana/download?utm_source=grafana_footer',
+  // }
+  // );
+  // }
 
   return links;
 };
