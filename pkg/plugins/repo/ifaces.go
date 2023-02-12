@@ -35,5 +35,5 @@ func (co CompatOpts) OSAndArch() string {
 }
 
 func (co CompatOpts) String() string {
-	return fmt.Sprintf("Grafana v%s %s", co.GrafanaVersion, co.OSAndArch())
+	return fmt.Sprintf("KubeNet v%s %s", co.GrafanaVersion, co.OSAndArch())
 }
