@@ -1416,7 +1416,7 @@ export const mockNavModel: NavIndex = {
     id: 'help',
     text: 'Help',
     section: NavSection.Config,
-    subTitle: 'Grafana v8.5.0-pre (f1c4da095b)',
+    subTitle: 'KubeNet v8.5.0-pre (f1c4da095b)',
     icon: 'question-circle',
     url: '#',
   },

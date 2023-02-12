@@ -283,8 +283,8 @@ func (sn *SlackNotifier) Notify(evalContext *alerting.EvalContext) error {
 		"text":        msg,
 		"fallback":    evalContext.GetNotificationTitle(),
 		"fields":      fields,
-		"footer":      "Grafana v" + setting.BuildVersion,
-		"footer_icon": "https://grafana.com/assets/img/fav32.png",
+		"footer":      "KubeNet v" + setting.BuildVersion,
+		"footer_icon": "https://kubenet.net/wp-content/uploads/2020/10/cropped-KN_Stacked-grey-and-white_CMYK-02-32x32.png",
 		"ts":          time.Now().Unix(),
 	}
 	if sn.NeedsImage() && imageURL != "" {

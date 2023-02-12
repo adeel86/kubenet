@@ -2625,7 +2625,7 @@ export const navIndex: NavIndex = {
     id: 'help',
     text: 'Help',
     section: NavSection.Config,
-    subTitle: 'Grafana v9.0.0-pre (cd35366222)',
+    subTitle: 'KubeNet v9.0.0-pre (cd35366222)',
     icon: 'question-circle',
     url: '#',
     sortWeight: -1000,

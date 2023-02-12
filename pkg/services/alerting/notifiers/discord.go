@@ -123,8 +123,8 @@ func (dn *DiscordNotifier) Notify(evalContext *alerting.EvalContext) error {
 	}
 
 	footer := map[string]interface{}{
-		"text":     "Grafana v" + setting.BuildVersion,
-		"icon_url": "https://grafana.com/assets/img/fav32.png",
+		"text":     "KubeNet v" + setting.BuildVersion,
+		"icon_url": "https://kubenet.net/wp-content/uploads/2020/10/cropped-KN_Stacked-grey-and-white_CMYK-02-32x32.png",
 	}
 
 	color, _ := strconv.ParseInt(strings.TrimLeft(evalContext.GetStateModel().Color, "#"), 16, 0)

@@ -433,7 +433,7 @@
           "step": 20
         }
       ],
-      "title": "Grafana version",
+      "title": "KubeNet version",
       "transform": "timeseries_to_rows",
       "type": "table-old"
     },
