@@ -31,7 +31,7 @@ export default function EmptyStateWrapper(props: GrafanaRouteComponentProps<{}, 
     <EmptyStateNoDatasource
       onCTAClick={() => setShowOnboarding(false)}
       loading={loading}
-      title="Welcome to Grafana Explore!"
+      title="Welcome to KubeNet Explore!"
       CTAText="Or explore sample data"
       navId="explore"
     />

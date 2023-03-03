@@ -29,7 +29,7 @@ export default function NewDashboardPage(props: GrafanaRouteComponentProps) {
     <EmptyStateNoDatasource
       onCTAClick={() => setCreateDashboard(true)}
       loading={loading}
-      title={t('datasource-onboarding.welcome', 'Welcome to Grafana dashboards!')}
+      title={t('datasource-onboarding.welcome', 'Welcome to KubeNet dashboards!')}
       CTAText={t('datasource-onboarding.sampleData', 'Or set up a new dashboard with sample data')}
       navId="dashboards/browse"
       pageNav={{ text: t('datasource-onboarding.new-dashboard', 'New dashboard'), url: '/dashboard/new' }}

@@ -105,7 +105,7 @@
     "preferred": "Connect your preferred data source:",
     "sampleData": "Or set up a new dashboard with sample data",
     "viewAll": "View all",
-    "welcome": "Welcome to Grafana dashboards!"
+    "welcome": "Welcome to KubeNet dashboards!"
   },
   "folder-picker": {
     "loading": "Loading folders..."
