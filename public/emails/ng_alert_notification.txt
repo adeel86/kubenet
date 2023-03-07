@@ -38,4 +38,4 @@ Go to the Alerts page:
 {{.AlertPageUrl}}
 
 
-Sent by Grafana v{{.BuildVersion}} (c) {{now | date "2006"}} Grafana Labs
+Sent by KubeNet v{{.BuildVersion}} (c) {{now | date "2022"}} KubeNet Labs

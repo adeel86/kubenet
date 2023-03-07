@@ -9,4 +9,4 @@ in the sign up form or use the link below.
 {{.SignUpUrl}}
 
 
-Sent by Grafana v{{.BuildVersion}} (c) {{now | date "2006"}} Grafana Labs
+Sent by KubeNet v{{.BuildVersion}} (c) {{now | date "2022"}} KubeNet Labs

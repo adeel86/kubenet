@@ -191,13 +191,13 @@ func (gcn *GoogleChatNotifier) Notify(evalContext *alerting.EvalContext) error {
 			},
 		})
 	} else {
-		gcn.log.Warn("Grafana External URL setting is missing or invalid. Skipping 'open in grafana' button to prevent google from displaying empty alerts.", "ruleURL", ruleURL)
+		gcn.log.Warn("KubeNet External URL setting is missing or invalid. Skipping 'open in grafana' button to prevent google from displaying empty alerts.", "ruleURL", ruleURL)
 	}
 
 	// add text paragraph widget for the build version and timestamp
 	widgets = append(widgets, textParagraphWidget{
 		Text: text{
-			Text: "Grafana v" + setting.BuildVersion + " | " + (time.Now()).Format(time.RFC822),
+			Text: "KubeNet v" + setting.BuildVersion + " | " + (time.Now()).Format(time.RFC822),
 		},
 	})
 

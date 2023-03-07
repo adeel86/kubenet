@@ -49,7 +49,7 @@ func init() {
 			},
 			{
 				Label:        "Use Discord's Webhook Username",
-				Description:  "Use the username configured in Discord's webhook settings. Otherwise, the username will be 'Grafana'",
+				Description:  "Use the username configured in Discord's webhook settings. Otherwise, the username will be 'KubeNet'",
 				Element:      alerting.ElementTypeCheckbox,
 				PropertyName: "use_discord_username",
 			},
@@ -123,7 +123,7 @@ func (dn *DiscordNotifier) Notify(evalContext *alerting.EvalContext) error {
 	}
 
 	footer := map[string]interface{}{
-		"text":     "Grafana v" + setting.BuildVersion,
+		"text":     "KubeNet v" + setting.BuildVersion,
 		"icon_url": "https://grafana.com/static/assets/img/fav32.png",
 	}
 
