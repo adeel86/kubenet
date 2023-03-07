@@ -159,7 +159,7 @@ This is the rewrite rule that is generated in the `web.config`:
 ```xml
   <rewrite>
       <rules>
-          <rule name="Grafana" enabled="true" stopProcessing="true">
+          <rule name="KubeNet" enabled="true" stopProcessing="true">
               <match url="grafana(/)?(.*)" />
               <action type="Rewrite" url="http://localhost:3000/{R:2}" logRewrittenUrl="false" />
           </rule>

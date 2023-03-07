@@ -12,7 +12,7 @@
     {
       "type": "grafana",
       "id": "grafana",
-      "name": "Grafana",
+      "name": "KubeNet",
       "version": "7.4.0-pre"
     },
     {

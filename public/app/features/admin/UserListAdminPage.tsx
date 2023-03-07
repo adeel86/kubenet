@@ -146,7 +146,7 @@ const UserListAdminPageUnConnected = ({
                   )}
                   <th>
                     Last active&nbsp;
-                    <Tooltip placement="top" content="Time since user was seen using Grafana">
+                    <Tooltip placement="top" content="Time since user was seen using KubeNet">
                       <Icon name="question-circle" />
                     </Tooltip>
                   </th>

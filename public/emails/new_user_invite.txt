@@ -1,4 +1,4 @@
-{{Subject .Subject "{{.InvitedBy}} has invited you to join Grafana"}}
+{{Subject .Subject "{{.InvitedBy}} has invited you to join KubeNet"}}
 
 You're invited to join {{.OrgName}}
 

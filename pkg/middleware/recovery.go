@@ -141,7 +141,7 @@ func Recovery(cfg *setting.Cfg) web.Middleware {
 						AppSubUrl string
 						Theme     string
 						ErrorMsg  string
-					}{"Server Error", "Grafana", cfg.AppSubURL, cfg.DefaultTheme, ""}
+					}{"Server Error", "KubeNet", cfg.AppSubURL, cfg.DefaultTheme, ""}
 
 					if setting.Env == setting.Dev {
 						if err, ok := r.(error); ok {

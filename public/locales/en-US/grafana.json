@@ -13,7 +13,7 @@
       "search": "Search"
     },
     "search-box": {
-      "placeholder": "Search Grafana"
+      "placeholder": "Search KubeNet"
     },
     "section": {
       "actions": "Actions",
@@ -218,7 +218,7 @@
       "title": "Organizations"
     },
     "global-users": {
-      "subtitle": "Manage users in Grafana",
+      "subtitle": "Manage users in KubeNet",
       "title": "Users",
       "titleBeforeTopnav": "Users"
     },
@@ -291,7 +291,7 @@
       "title": "Scenes"
     },
     "search": {
-      "placeholder": "Search Grafana",
+      "placeholder": "Search KubeNet",
       "placeholderCommandPalette": "Search or jump to..."
     },
     "search-dashboards": {
@@ -302,7 +302,7 @@
       "title": "Settings"
     },
     "service-accounts": {
-      "subtitle": "Use service accounts to run automated workloads in Grafana",
+      "subtitle": "Use service accounts to run automated workloads in KubeNet",
       "title": "Service accounts"
     },
     "sign-in": "Sign in",

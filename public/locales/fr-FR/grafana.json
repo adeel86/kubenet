@@ -172,11 +172,11 @@
       "title": "Alertes et incidents"
     },
     "api-keys": {
-      "subtitle": "Gérer et créer des clés API utilisées pour interagir avec les API HTTP de Grafana",
+      "subtitle": "Gérer et créer des clés API utilisées pour interagir avec les API HTTP de KubeNet",
       "title": "Clés API"
     },
     "apps": {
-      "subtitle": "Plugins d'application qui prolongent l'expérience Grafana",
+      "subtitle": "Plugins d'application qui prolongent l'expérience KubeNet",
       "title": "Applications"
     },
     "config": {
@@ -218,7 +218,7 @@
       "title": "Organisations"
     },
     "global-users": {
-      "subtitle": "Gérer les utilisateurs dans Grafana",
+      "subtitle": "Gérer les utilisateurs dans KubeNet",
       "title": "Utilisateurs",
       "titleBeforeTopnav": "Utilisateurs"
     },
@@ -291,18 +291,18 @@
       "title": "Scènes"
     },
     "search": {
-      "placeholder": "Rechercher dans Grafana",
+      "placeholder": "Rechercher dans KubeNet",
       "placeholderCommandPalette": ""
     },
     "search-dashboards": {
       "title": "Rechercher dans les tableaux de bord"
     },
     "server-settings": {
-      "subtitle": "Afficher les paramètres définis dans votre configuration Grafana",
+      "subtitle": "Afficher les paramètres définis dans votre configuration KubeNet",
       "title": "Paramètres"
     },
     "service-accounts": {
-      "subtitle": "Utiliser des comptes de service pour exécuter des charges de travail automatisées dans Grafana",
+      "subtitle": "Utiliser des comptes de service pour exécuter des charges de travail automatisées dans KubeNet",
       "title": "Comptes de service"
     },
     "sign-in": "Se connecter",

@@ -168,7 +168,7 @@ func (cfg *Cfg) readUnifiedAlertingEnabledSetting(section *ini.Section) (*bool, 
 
 	// If both legacy and unified alerting are enabled then return an error
 	if AlertingEnabled != nil && *AlertingEnabled && unifiedAlerting {
-		return nil, errors.New("legacy and unified alerting cannot both be enabled at the same time, please disable one of them and restart Grafana")
+		return nil, errors.New("legacy and unified alerting cannot both be enabled at the same time, please disable one of them and restart KubeNet")
 	}
 
 	if AlertingEnabled == nil {

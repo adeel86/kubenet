@@ -100,7 +100,7 @@ func (s *ServiceImpl) getOrgAdminNode(c *contextmodel.ReqContext) (*navtree.NavL
 		configNodes = append(configNodes, &navtree.NavLink{
 			Text:     "Service accounts",
 			Id:       "serviceaccounts",
-			SubTitle: "Use service accounts to run automated workloads in Grafana",
+			SubTitle: "Use service accounts to run automated workloads in KubeNet",
 			Icon:     "gf-service-account",
 			Url:      s.cfg.AppSubURL + "/org/serviceaccounts",
 		})
@@ -128,7 +128,7 @@ func (s *ServiceImpl) getServerAdminNode(c *contextmodel.ReqContext) *navtree.Na
 	if s.features.IsEnabled(featuremgmt.FlagTopnav) {
 		if hasAccess(ac.ReqSignedIn, ac.EvalAny(ac.EvalPermission(ac.ActionOrgUsersRead), ac.EvalPermission(ac.ActionUsersRead, ac.ScopeGlobalUsersAll))) {
 			adminNavLinks = append(adminNavLinks, &navtree.NavLink{
-				Text: "Users", SubTitle: "Manage users in Grafana", Id: "global-users", Url: s.cfg.AppSubURL + "/admin/users", Icon: "user",
+				Text: "Users", SubTitle: "Manage users in KubeNet", Id: "global-users", Url: s.cfg.AppSubURL + "/admin/users", Icon: "user",
 			})
 		}
 	} else {

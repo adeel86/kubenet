@@ -43,7 +43,7 @@ func (ctx *ReqContext) Handle(cfg *setting.Cfg, status int, title string, err er
 		AppSubUrl string
 		Theme     string
 		ErrorMsg  error
-	}{title, "Grafana", cfg.AppSubURL, "dark", nil}
+	}{title, "KubeNet", cfg.AppSubURL, "dark", nil}
 	if err != nil {
 		ctx.Logger.Error(title, "error", err)
 		if setting.Env != setting.Prod {

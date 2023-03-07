@@ -33,7 +33,7 @@ export function TopSearchBarInput() {
   };
 
   if (isSmallScreen) {
-    return <ToolbarButton iconOnly icon="search" aria-label="Search Grafana" onClick={onOpenSearch} />;
+    return <ToolbarButton iconOnly icon="search" aria-label="Search KubeNet" onClick={onOpenSearch} />;
   }
 
   return (

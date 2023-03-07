@@ -22,7 +22,7 @@ var (
 func init() {
 	emailsSentTotal = promauto.NewCounter(prometheus.CounterOpts{
 		Name:      "emails_sent_total",
-		Help:      "Number of emails sent by Grafana",
+		Help:      "Number of emails sent by KubeNet",
 		Namespace: "grafana",
 	})
 
