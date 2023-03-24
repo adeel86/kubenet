@@ -7,7 +7,7 @@ import { RuleType, SharedProps } from './RuleType';
 const GrafanaManagedRuleType: FC<SharedProps> = ({ selected = false, disabled, onClick }) => {
   return (
     <RuleType
-      name="Grafana managed alert"
+      name="KubeNet managed alert"
       description={
         <span>
           Supports multiple data sources of any kind.
