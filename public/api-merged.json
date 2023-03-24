@@ -22,6 +22,30 @@
   },
   "basePath": "/api",
   "paths": {
+    "/access-control/assignments/search": {
+      "post": {
+        "description": "Returns the result of the search through access-control role assignments.\n\nYou need to have a permission with action `teams.roles:read` on scope `teams:*`\nand a permission with action `users.roles:read` on scope `users:*`.",
+        "tags": [
+          "enterprise"
+        ],
+        "summary": "Debug permissions.",
+        "operationId": "searchResult",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/searchResult"
+          },
+          "400": {
+            "$ref": "#/responses/badRequestError"
+          },
+          "403": {
+            "$ref": "#/responses/forbiddenError"
+          },
+          "500": {
+            "$ref": "#/responses/internalServerError"
+          }
+        }
+      }
+    },
     "/access-control/roles": {
       "get": {
         "description": "Gets all existing roles. The response contains all global and organization local roles, for the organization which user is signed in.\n\nYou need to have a permission with action `roles:read` and scope `roles:*`.",
@@ -12008,9 +12032,6 @@
         "dashboard"
       ],
       "properties": {
-        "Result": {
-          "$ref": "#/definitions/DashboardSnapshot"
-        },
         "dashboard": {
           "$ref": "#/definitions/Json"
         },
@@ -12553,64 +12574,6 @@
         }
       }
     },
-    "DashboardSnapshot": {
-      "description": "DashboardSnapshot model",
-      "type": "object",
-      "properties": {
-        "Created": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "Dashboard": {
-          "$ref": "#/definitions/Json"
-        },
-        "DashboardEncrypted": {
-          "type": "array",
-          "items": {
-            "type": "integer",
-            "format": "uint8"
-          }
-        },
-        "DeleteKey": {
-          "type": "string"
-        },
-        "Expires": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "External": {
-          "type": "boolean"
-        },
-        "ExternalDeleteUrl": {
-          "type": "string"
-        },
-        "ExternalUrl": {
-          "type": "string"
-        },
-        "Id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Key": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "OrgId": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "Updated": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "UserId": {
-          "type": "integer",
-          "format": "int64"
-        }
-      }
-    },
     "DashboardSnapshotDTO": {
       "description": "DashboardSnapshotDTO without dashboard map",
       "type": "object",
@@ -13053,9 +13016,10 @@
       "format": "int64"
     },
     "Duration": {
-      "description": "A Duration represents the elapsed time between two instants\nas an int64 nanosecond count. The representation limits the\nlargest representable duration to approximately 290 years.",
       "type": "integer",
-      "format": "int64"
+      "format": "int64",
+      "title": "Duration is a type used for marshalling durations.",
+      "$ref": "#/definitions/Duration"
     },
     "EmailConfig": {
       "type": "object",
@@ -14654,7 +14618,7 @@
     },
     "LibraryElementDTOMetaUser": {
       "type": "object",
-      "title": "LibraryElementDTOMetaUser is the meta information for user that creates/changes the library element.",
+      "title": "LibraryElementDTOMetaUser defines model for LibraryElementDTOMetaUser.",
       "properties": {
         "avatarUrl": {
           "type": "string"
@@ -14859,34 +14823,6 @@
         "type": "array",
         "items": {
           "$ref": "#/definitions/GettableRuleGroupConfig"
-        }
-      }
-    },
-    "NavLink": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string"
-        },
-        "target": {
-          "type": "string"
-        },
-        "text": {
-          "type": "string"
-        },
-        "url": {
-          "type": "string"
-        }
-      }
-    },
-    "NavbarPreference": {
-      "type": "object",
-      "properties": {
-        "savedItems": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/NavLink"
-          }
         }
       }
     },
@@ -15381,9 +15317,6 @@
         },
         "language": {
           "type": "string"
-        },
-        "navbar": {
-          "$ref": "#/definitions/NavbarPreference"
         },
         "queryHistory": {
           "$ref": "#/definitions/QueryHistoryPreference"
@@ -15893,32 +15826,31 @@
         }
       }
     },
-    "Prefs": {
+    "Preferences": {
       "type": "object",
+      "title": "Preferences defines model for Preferences.",
       "properties": {
-        "homeDashboardId": {
-          "type": "integer",
-          "format": "int64"
-        },
         "homeDashboardUID": {
+          "description": "UID for the home dashboard",
           "type": "string"
         },
         "language": {
+          "description": "Selected language (beta)",
           "type": "string"
-        },
-        "navbar": {
-          "$ref": "#/definitions/NavbarPreference"
         },
         "queryHistory": {
           "$ref": "#/definitions/QueryHistoryPreference"
         },
         "theme": {
+          "description": "light, dark, empty is default",
           "type": "string"
         },
         "timezone": {
+          "description": "The timezone selection\nTODO: this should use the timezone defined in common",
           "type": "string"
         },
         "weekStart": {
+          "description": "day of the week (sunday, monday, etc)",
           "type": "string"
         }
       }
@@ -18442,9 +18374,6 @@
         "language": {
           "type": "string"
         },
-        "navbar": {
-          "$ref": "#/definitions/NavbarPreference"
-        },
         "queryHistory": {
           "$ref": "#/definitions/QueryHistoryPreference"
         },
@@ -18452,7 +18381,8 @@
           "type": "string",
           "enum": [
             "light",
-            "dark"
+            "dark",
+            "system"
           ]
         },
         "timezone": {
@@ -20165,7 +20095,7 @@
     "getPreferencesResponse": {
       "description": "(empty)",
       "schema": {
-        "$ref": "#/definitions/Prefs"
+        "$ref": "#/definitions/Preferences"
       }
     },
     "getQueryHistoryDeleteQueryResponse": {
