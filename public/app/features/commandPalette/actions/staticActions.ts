@@ -4,10 +4,7 @@ import { t } from 'app/core/internationalization';
 import { changeTheme } from 'app/core/services/theme';
 
 import { CommandPaletteAction } from '../types';
-import { DEFAULT_PRIORITY, PREFERENCES_PRIORITY } from '../values';
-
-// We reuse this, but translations cannot be in module scope (t must be called after i18n has set up,)
-const getPagesSectionTranslation = () => t('command-palette.section.pages', 'Pages');
+import { ACTIONS_PRIORITY, DEFAULT_PRIORITY, PREFERENCES_PRIORITY } from '../values';
 
 // TODO: Clean this once ID is mandatory on nav items
 function idForNavItem(navItem: NavModelItem) {
@@ -18,22 +15,27 @@ function navTreeToActions(navTree: NavModelItem[], parent?: NavModelItem): Comma
   const navActions: CommandPaletteAction[] = [];
 
   for (const navItem of navTree) {
-    const { url, text, isCreateAction, children } = navItem;
+    const { url, target, text, isCreateAction, children } = navItem;
     const hasChildren = Boolean(children?.length);
 
     if (!(url || hasChildren)) {
       continue;
     }
 
-    const section = isCreateAction ? t('command-palette.section.actions', 'Actions') : getPagesSectionTranslation();
+    const section = isCreateAction
+      ? t('command-palette.section.actions', 'Actions')
+      : t('command-palette.section.pages', 'Pages');
+
+    const priority = isCreateAction ? ACTIONS_PRIORITY : DEFAULT_PRIORITY;
 
     const action = {
       id: idForNavItem(navItem),
       name: text, // TODO: translate
       section: section,
       url: url && locationUtil.stripBaseFromUrl(url),
-      parent: parent && idForNavItem(parent),
-      priority: DEFAULT_PRIORITY,
+      parent: parent && !isCreateAction && idForNavItem(parent),
+      target,
+      priority: priority,
     };
 
     navActions.push(action);

@@ -11,6 +11,7 @@ import (
 	"github.com/stretchr/testify/require"
 
 	"github.com/grafana/grafana/pkg/infra/db"
+	"github.com/grafana/grafana/pkg/infra/usagestats"
 	"github.com/grafana/grafana/pkg/login/social"
 	"github.com/grafana/grafana/pkg/plugins"
 	"github.com/grafana/grafana/pkg/plugins/config"
@@ -64,7 +65,7 @@ func setupTestEnvironment(t *testing.T, cfg *setting.Cfg, features *featuremgmt.
 			PluginsCDNURLTemplate: cfg.PluginsCDNURLTemplate,
 			PluginSettings:        cfg.PluginSettings,
 		}),
-		SocialService: social.ProvideService(cfg, features),
+		SocialService: social.ProvideService(cfg, features, &usagestats.UsageStatsMock{}),
 	}
 
 	m := web.New()
@@ -158,7 +159,7 @@ func TestHTTPServer_GetFrontendSettings_pluginsCDNBaseURL(t *testing.T) {
 		{
 			desc: "With CDN",
 			mutateCfg: func(cfg *setting.Cfg) {
-				cfg.PluginsCDNURLTemplate = "https://cdn.example.com/{id}/{version}/public/plugins/{id}/{assetPath}"
+				cfg.PluginsCDNURLTemplate = "https://cdn.example.com"
 			},
 			expected: settings{PluginsCDNBaseURL: "https://cdn.example.com"},
 		},
