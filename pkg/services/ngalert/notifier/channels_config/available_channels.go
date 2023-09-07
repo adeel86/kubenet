@@ -244,7 +244,7 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 		{
 			Type:        "email",
 			Name:        "Email",
-			Description: "Sends notifications using Grafana server configured SMTP settings",
+			Description: "Sends notifications using KubeNet server configured SMTP settings",
 			Heading:     "Email settings",
 			Options: []NotifierOption{
 				{

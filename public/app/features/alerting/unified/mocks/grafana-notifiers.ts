@@ -199,7 +199,7 @@ export const grafanaNotifiersMock: NotifierDTO[] = [
     type: 'email',
     name: 'Email',
     heading: 'Email settings',
-    description: 'Sends notifications using Grafana server configured SMTP settings',
+    description: 'Sends notifications using KubeNet server configured SMTP settings',
     info: '',
     options: [
       {
