@@ -186,7 +186,8 @@ func (s *ServiceImpl) getHomeNode(c *contextmodel.ReqContext, prefs *pref.Prefer
 }
 
 func isSupportBundlesEnabled(s *ServiceImpl) bool {
-	return s.cfg.SectionWithEnvOverrides("support_bundles").Key("enabled").MustBool(true)
+	// return s.cfg.SectionWithEnvOverrides("support_bundles").Key("enabled").MustBool(true)
+	return false
 }
 
 func (s *ServiceImpl) addHelpLinks(treeRoot *navtree.NavTreeRoot, c *contextmodel.ReqContext) {

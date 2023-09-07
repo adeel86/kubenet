@@ -1006,7 +1006,7 @@ func GetAvailableNotifiers() []*NotifierPlugin {
 				},
 				{
 					Label:        "Use Discord's Webhook Username",
-					Description:  "Use the username configured in Discord's webhook settings. Otherwise, the username will be 'Grafana'",
+					Description:  "Use the username configured in Discord's webhook settings. Otherwise, the username will be 'KubeNet'",
 					Element:      ElementTypeCheckbox,
 					PropertyName: "use_discord_username",
 				},

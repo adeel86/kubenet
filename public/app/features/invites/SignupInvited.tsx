@@ -65,7 +65,7 @@ export const SignupInvitedPage = ({ match }: Props) => {
         <h3 className="page-sub-heading">Hello {greeting || 'there'}.</h3>
 
         <div className="modal-tagline p-b-2">
-          <em>{invitedBy || 'Someone'}</em> has invited you to join Grafana and the organization{' '}
+          <em>{invitedBy || 'Someone'}</em> has invited you to join KubeNet and the organization{' '}
           <span className="highlight-word">{contextSrv.user.orgName}</span>
           <br />
           Please complete the following and choose a password to accept your invitation and continue:
